@@ -31,8 +31,9 @@ BEGIN
 		PRINT 'Loading CRM Tables';
 		PRINT '---------------------------------------';
 
-
+		-- ===============================================================================
 		-- Loading silver.crm_cust_info
+		-- ===============================================================================
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate table: silver.crm_cust_info';
 		TRUNCATE TABLE silver.crm_cust_info;
@@ -71,8 +72,10 @@ BEGIN
  		SET @end_time = GETDATE();
 		print '>> Load duration: ' + cast(datediff(second, @start_time, @end_time) as nvarchar) + ' seconds';
 		PRINT '---------------------------------------';
-		
+
+		-- ===============================================================================
 		-- Loading silver.crm_prd_info
+		-- ===============================================================================
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate table: silver.crm_prd_info';
 		TRUNCATE TABLE silver.crm_prd_info;
@@ -107,8 +110,9 @@ BEGIN
 			print '>> Load duration: ' + cast(datediff(second, @start_time, @end_time) as nvarchar) + ' seconds';
 			PRINT '---------------------------------------'
 		
-
+		-- ===============================================================================
 		-- Loading silver.crm_sales_details
+		-- ===============================================================================
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate table: silver.crm_sales_details';
 		TRUNCATE TABLE silver.crm_sales_details;
@@ -156,7 +160,9 @@ BEGIN
 		PRINT 'Loading ERP Tables';
 		PRINT '---------------------------------------';		
 
+		-- ===============================================================================
 		-- Loading silver.erp_cust_az12
+		-- ===============================================================================
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate table: silver.erp_cust_az12';
 		TRUNCATE TABLE silver.erp_cust_az12;
@@ -179,7 +185,9 @@ BEGIN
 		end as gen
 		from bronze.erp_cust_az12
 
+		-- ===============================================================================
 		-- Loading silver.erp_loc_a101
+		-- ===============================================================================
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate table: silver.erp_loc_a101';
 		TRUNCATE TABLE silver.erp_loc_a101;
@@ -200,8 +208,9 @@ BEGIN
 			print '>> Load duration: ' + cast(datediff(second, @start_time, @end_time) as nvarchar) + ' seconds';
 			PRINT '---------------------------------------'
 		
-
+		-- ===============================================================================
 		--Loading silver.erp_px_cat_g1v2
+		-- ===============================================================================
 		SET @start_time = GETDATE();
 		PRINT '>> Truncate table: silver.erp_px_cat_g1v2';
 		TRUNCATE TABLE silver.erp_px_cat_g1v2;
