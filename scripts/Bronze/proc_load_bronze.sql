@@ -129,6 +129,7 @@ BEGIN
 
 		SET @batch_end_time = GETDATE();
 		print '===============================================';
+		print 'Loading Bronze Layer is Completed'
 		print '		- Total Load Duration: ' + cast(datediff(second, @batch_start_time, @batch_end_time) as nvarchar) + ' seconds';
 		print '===============================================';
 
